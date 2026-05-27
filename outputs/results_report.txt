@@ -1,0 +1,13 @@
+Results Report
+
+This project trained three image-based models: a food-category classifier, a portion-size classifier, and a calorie-level classifier on Nutrition5k. Overall, the strongest component was the food classifier, while the portion and calorie tasks were much harder and showed noticeably lower accuracy.
+
+The best food model was the EfficientNet-B0 classifier. On the validation set it reached 96.8% accuracy, and on the test set it reached 96.4% accuracy, with strong and balanced performance across all five food classes (burger, pasta, pizza, salad, sushi) in outputs/food_metrics.csv. This slightly outperformed the ResNet-18 baseline, which achieved 95.4% validation accuracy and 94.6% test accuracy in outputs/food_resnet18_baseline_metrics.csv. These results suggest that food type recognition is the most reliable stage of the pipeline.
+
+The portion classifier performed much worse. The EfficientNet-B0 portion model achieved only 46.7% validation accuracy and 33.3% test accuracy in outputs/portion_metrics.csv. Class-level precision and recall were low across small, medium, and large, indicating that the model struggled to distinguish portion size consistently. This is likely the main bottleneck in the final pipeline.
+
+The Nutrition5k calorie-level model showed moderate but still limited performance. It reached 33.3% validation accuracy and 50.0% test accuracy in outputs/nutrition5k_metrics.csv. The model appeared to predict the medium class relatively well on the test set, with recall of 0.90, but performance for low and high remained inconsistent. This suggests the direct calorie-level prediction task is harder than food classification and may be affected by small dataset size.
+
+The final pipeline examples in outputs/final_pipeline_examples.csv show that food predictions were usually extremely confident, often above 0.99, while portion predictions were much less confident, often around 0.35 to 0.59. As a result, the rule-based calorie mapping could still produce plausible calorie labels, but the overall pipeline quality depends heavily on the weaker portion model. In practice, this means the system is good at recognizing what food is shown, but much less reliable at estimating portion size and therefore calorie level.
+
+In summary, the project successfully demonstrated strong food image classification, but portion estimation and calorie prediction remain the major challenges. The results suggest that future improvement should focus on expanding or improving the portion-labeled dataset, refining portion-related augmentations, and possibly replacing the rule-based calorie stage with a stronger learned model once more labeled data is available.
