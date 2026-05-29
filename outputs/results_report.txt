@@ -1,16 +1,16 @@
 Results Report
 
-Generated from current output files on 2026-05-28 18:58:52.
+Generated from current output files on 2026-05-29 15:31:42.
 
 This project trained three image-based models: a food-category classifier, a portion-size classifier, and a direct calorie-level classifier on Nutrition5k.
 
-The strongest component remains the EfficientNet-B0 food classifier. It reached 0.968 best validation accuracy and 0.964 test accuracy, with macro test F1 0.964. The ResNet-18 baseline was slightly weaker at 0.954 best validation accuracy and 0.946 test accuracy.
+The strongest component remains the EfficientNet-B0 food classifier. It reached 0.968 best validation accuracy and 0.964 test accuracy, with macro test F1 0.964. The ResNet-18 baseline was slightly weaker at 0.958 best validation accuracy and 0.946 test accuracy.
 
-The portion classifier improved relative to the earlier smaller clean subset. Using the 1500-clean portion labels, it reached 0.469 best validation accuracy and 0.491 test accuracy, with macro test F1 0.434. It still trails the food model by a large margin and remains the main bottleneck.
+The portion classifier improved relative to the earlier smaller clean subset. Using the 1500-clean portion labels, it reached 0.460 best validation accuracy and 0.457 test accuracy, with macro test F1 0.448. It still trails the food model by a large margin and remains the main bottleneck.
 
-The direct Nutrition5k calorie-level baseline also improved modestly. It reached 0.556 best validation accuracy and 0.615 test accuracy, with macro test F1 0.601. This remains a difficult task with a small and imbalanced dataset.
+The direct Nutrition5k calorie-level baseline also improved modestly. It reached 0.500 best validation accuracy and 0.577 test accuracy, with macro test F1 0.538. This remains a difficult task with a small and imbalanced dataset.
 
-The final pipeline examples file contains 30 sampled test predictions. Average food confidence was 0.994, while average portion confidence was 0.437. That gap is consistent with the model-level results: food recognition is reliable, but portion estimation is much less stable.
+The final pipeline examples file contains 30 sampled test predictions. Average food confidence was 0.994, while average portion confidence was 0.408. That gap is consistent with the model-level results: food recognition is reliable, but portion estimation is much less stable.
 
 Among the 4 sampled examples that had a usable ground-truth portion label, portion predictions matched 0.500 of them and the derived rule-based calorie label matched 0.500.
 
