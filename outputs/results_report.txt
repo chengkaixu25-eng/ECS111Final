@@ -1,6 +1,6 @@
 Results Report
 
-Generated from current output files on 2026-05-28 18:39:28.
+Generated from current output files on 2026-05-28 18:58:52.
 
 This project trained three image-based models: a food-category classifier, a portion-size classifier, and a direct calorie-level classifier on Nutrition5k.
 
@@ -8,7 +8,7 @@ The strongest component remains the EfficientNet-B0 food classifier. It reached 
 
 The portion classifier improved relative to the earlier smaller clean subset. Using the 1500-clean portion labels, it reached 0.469 best validation accuracy and 0.491 test accuracy, with macro test F1 0.434. It still trails the food model by a large margin and remains the main bottleneck.
 
-The direct Nutrition5k calorie-level baseline also improved modestly. It reached 0.444 best validation accuracy and 0.462 test accuracy, with macro test F1 0.384. This remains a difficult task with a small and imbalanced dataset.
+The direct Nutrition5k calorie-level baseline also improved modestly. It reached 0.556 best validation accuracy and 0.615 test accuracy, with macro test F1 0.601. This remains a difficult task with a small and imbalanced dataset.
 
 The final pipeline examples file contains 30 sampled test predictions. Average food confidence was 0.994, while average portion confidence was 0.437. That gap is consistent with the model-level results: food recognition is reliable, but portion estimation is much less stable.
 
