@@ -16,7 +16,7 @@ ECS111Final/
 |   |-- food101_subset/
 |   |-- nutrition5k/
 |   |-- food101_labels_final.csv
-|   |-- portion_labeling_clean.csv
+|   |-- portion_labeling_1500_clean.csv
 |-- outputs/
 |   |-- *.pth
 |   |-- *_metrics.csv
@@ -32,7 +32,7 @@ ECS111Final/
 
 - `Main.ipynb`: main training, evaluation, and inference notebook
 - `Data/food101_labels_final.csv`: labeled Food-101 subset metadata
-- `Data/portion_labeling_clean.csv`: cleaned portion labels
+- `Data/portion_labeling_1500_clean.csv`: cleaned portion labels used for portion-model training
 - `Data/nutrition5k/nutrition5k_labels.csv`: Nutrition5k calorie labels and metadata
 - `outputs/results_report.txt`: short written summary of the final results
 
