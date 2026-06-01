@@ -109,12 +109,34 @@ You can use:
 - `outputs/food_model.pth` for food prediction
 - `outputs/portion_model.pth` for portion prediction
 - `outputs/nutrition5k_baseline_model.pth` for direct calorie-level prediction
+- `infer_random_image.py` to automatically choose a random dataset image and print predictions
 
 ## Notes
 
 - The notebook expects the dataset folder to be named `Data/`
 - CSV image paths are resolved correctly even when they use `data/...`
 - `outputs/` contains generated artifacts and is ignored for future Git changes by default in `.gitignore`
+
+## Random Image Inference
+
+Run the saved final models on a random image from the dataset:
+
+```powershell
+.\.venv\Scripts\python.exe .\infer_random_image.py
+```
+
+Or run inference on a specific image:
+
+```powershell
+.\.venv\Scripts\python.exe .\infer_random_image.py --image .\Data\food101_subset\pizza\pizza_0001.jpg
+```
+
+The script prints:
+
+- predicted food label and confidence
+- predicted portion label and confidence
+- final pipeline calorie output
+- direct calorie-model prediction and confidence
 
 ## Future Improvements
 
